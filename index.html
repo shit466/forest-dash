@@ -15,7 +15,7 @@ class Runner {
     this.objects = []; this.events = []; this.nextRow = 34; this.rows = 0;
     this.combo = 0; this.bestCombo = 0;
   }
-  get speed() { return Math.min(31, 13 + this.distance / 145); }
+  get speed() { return 2 * Math.min(31, 13 + this.distance / 145); }
   get height() { return this.jump > 0 ? Math.sin(Math.PI * this.jump / .95) : 0; }
   get score() { return Math.floor(this.distance) + this.coins * 15; }
   start() { this.reset(); this.state = 'running'; this.spawnRow(); this.objects.forEach(o => o.z -= 60); this.nextRow = 0; }
